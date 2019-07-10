@@ -160,7 +160,7 @@
 					19、data-toggle		指以什么事件触发，常用的如modal,popover,tooltips等，data-target指事件的目标。
 
 
-			6、 模态框：（弹框）
+			6、 模态框：（弹框 有js点击事件）
 
 					1、modal 			声明一个模态框
 					2、modal-dialog 	定义模态框尺寸
@@ -169,3 +169,27 @@
 					5、modal-header		头部
 					6、modal-body		主题
 					7、modal-foot		底部
+
+
+
+			7、 路径导航：breadcrumb 爬虫会爬取
+
+				<ol class="breadcrumb">
+				  <li><a href="#">Home</a></li>
+				  <li><a href="#">Library</a></li>
+				  <li class="active">Data</li>
+				</ol>
+
+
+
+
+			8、 bootstrap 下拉菜单
+
+					1、dropdown-toggle
+					2、dropdown-menu
+
+
+			9、 图片响应式
+
+					img-responsive 声明响应式图片
+					class="img-responsive"
