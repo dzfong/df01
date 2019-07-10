@@ -1,0 +1,62 @@
+<!-- 加载自定义过滤器 -->
+{%load filters%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<style>
+		.header{height: 50px; background-color: darkturquoise}
+		.content{height: 700px}
+		.footer{height: 50px; background-color: lightpink}
+		.red{background-color: red}
+		.yellow{background-color: yellow}
+		.green{background-color: green}
+	</style>
+</head>
+<body>
+	<div class = "header"> 导航栏 </div>
+	<div class = "content">
+		<h1> 这是一个模板文件 </h1>
+		使用模板变量： <br/>
+		{{ content }} <br/>
+		使用列表：<br/>
+		{{ list }} <br>
+		for 循环：<br>
+		<ul>
+			{% for i in list %}
+			
+			<!-- 多行注释  -->
+			{% comment %}
+				{% if i <= 2 %}
+					<li class="red">{{ forloop.counter }}--{{ i }}</li>
+				{% elif i <= 5 %}
+					<li class="yellow">{{ forloop.counter }}--{{ i }}</li>
+				{% else %}
+					<li class="green">{{ forloop.counter }}--{{ i }}</li>
+				{% endif %}
+			{% endcomment %}
+
+				<!-- 自定义过滤器  -->
+				{% if i|mm %}
+					<li class="red">{{ forloop.counter }}--{{ i }}</li>
+				{% else %}
+					<li class="green">{{ forloop.counter }}--{{ i }}</li>
+				{% endif %}
+
+			{% endfor %}
+		</ul>
+
+		<!-- 内容查询 -->
+		<form action={% url 'booktest:search' %}>
+			<input type="text" name= 'query'>
+		</form>
+
+
+		<a href="{% url 'news:loose' a=100 b=200 %}">  路径页 </a>
+
+	</div>	
+	<div class='footer'> 页脚 </div>
+
+</body>
+</html>
